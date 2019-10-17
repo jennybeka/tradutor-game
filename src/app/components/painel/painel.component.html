@@ -1,0 +1,47 @@
+<div class="div container"><!--INICIO CONTAINER-->
+    <div class="jumbotron"><!--inicio JUMBOTRON -->
+        <div class="row">
+            <div class="col-sm-6">
+                <app-progresso [progresso]="progresso"></app-progresso>   
+            </div>
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end">
+                    <app-tentativas [tentativas]="tentativas"></app-tentativas>
+                </div>      
+            </div>
+        </div><!--FIM DO row -->
+
+        <div class="row">
+            <div class="col">
+               <h6>{{ instrucao }}</h6>
+               <p>{{ rodadaFrase.fraseEng }}</p> <!--recuperando os dados do array de forma dinamica -->
+
+               <div class="form-group">
+                    <textarea 
+                        class="form-control" 
+                        rows="3"
+                        (input)="atualizaResposta($event)" 
+                        [value] ="resposta"
+                    ></textarea><!--$event captura o estado do elemento html assim que ele é disparado  -->
+               </div>
+            </div>
+        </div><!--FIM DO row -->
+
+        <DIV class="ROW">
+            <div class="col">
+                <div class="d-flex justify-content-end"> <!--div para justificar o button -->
+                    <button type="button" class="btn btn-outline-primary" (click)="verificarResposta()">Verificar</button>
+                </div><!--FIM da div para justificar o button -->
+            </div>
+            
+        </DIV>
+
+    </div><!--FIM JUMBOTRON -->
+ </div> <!--FIM DO container -->
+ <footer class="card-footer text-muted fixed-bottom">
+    <div>
+        <p>Copyright &copy; 2019 |
+        <a href="mailto:jennybekadutra@gmail.com?Subject=Hello%20" target="_top">  Jennyfer Rebeka Dutra</a></p>
+    </div>
+</footer>
+   

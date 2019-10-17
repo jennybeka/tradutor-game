@@ -1,0 +1,39 @@
+<app-topo></app-topo>
+
+<div *ngIf="jogoEmAndamento; else fimDejogo">
+    <app-painel (encerrarJogo)="encerrarJogo($event)"></app-painel>
+</div>
+<ng-template #fimDejogo>
+    <div *ngIf="tipoEncerramento === 'Derrota'; else fimDeJogoVitoria" class="container" style="margin-top: 50px">
+        <div class="row">
+            <div class="col">
+                <h3 style="color: red">Fim de Jogo! Perdeste :( </h3>
+                <button class="btn btn-outline-primary" (click)="reiniciarJogo()">New Game</button>
+            </div>
+        </div>
+    </div>
+    <footer class="card-footer text-muted fixed-bottom">
+            <div>
+                <p>Copyright &copy; 2019 |
+                <a href="mailto:jennybekadutra@gmail.com?Subject=Hello%20" target="_top">  Jennyfer Rebeka Dutra</a></p>
+            </div>
+    </footer>
+</ng-template>
+
+<ng-template #fimDeJogoVitoria>
+    <div class="container" style="margin-top: 50px">
+            <div class="row">
+                <div class="col">
+                    <h3 style="color: green">Fim de Jogo! Ganhaste :D </h3>
+                    <button class="btn btn-outline-primary" (click)="reiniciarJogo()">New Game</button>
+                </div>
+            </div>
+        </div>
+        <footer class="card-footer text-muted fixed-bottom">
+                <div>
+                    <p>Copyright &copy; 2019 |
+                    <a href="mailto:jennybekadutra@gmail.com?Subject=Hello%20" target="_top">  Jennyfer Rebeka Dutra</a></p>
+                </div>
+            </footer>
+</ng-template>
+

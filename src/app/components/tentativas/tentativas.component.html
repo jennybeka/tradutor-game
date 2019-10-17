@@ -1,0 +1,9 @@
+<!-- <img [src]="coracaoVazio">   property binding de um atributo [src] 
+<img [src]="coracaoVazio" alt="coração">
+<img [src]="coracaoVazio" alt="coração"> -->
+
+ <!-- diretiva estrutural -->
+
+ <img *ngFor="let coracao of coracoes" [src]="coracao.exibeCoracao()"/>
+
+
